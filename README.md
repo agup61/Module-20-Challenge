@@ -1,52 +1,43 @@
-# Module-20-Challenge
+# Module_20_Challenge-Credit_Risk_Classification
+This project aims to develop a logistic regression model for credit risk classification. The objective is to predict whether a loan is healthy or high-risk based on various features provided by the lending company.
+
+![alt text](https://www.investopedia.com/thmb/C_bFuBz5TbJphsxLFrlLx3S4zyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/creditrisk-Final-18f65d6c12404b9cbccd5bb713b85ce4.jpg)
+
+## Requirements
+* Python v3.10.9
+* The following libraries are required to run the analysis code:
+* numpy (imported as np): A library for numerical computations and array operations.
+* pandas (imported as pd): A library for data manipulation and analysis.
+* pathlib from the Python Standard Library: A module for working with file paths.
+* confusion_matrix from sklearn.metrics: A function to compute the confusion matrix for model evaluation.
+* classification_report from sklearn.metrics: A function to generate a classification report, including precision, recall, and F1-score.
+* LogisticRegression from sklearn.linear_model: A class for logistic regression model implementation.
+Make sure to have these libraries installed in your environment before running the analysis code.
 
 
-Credit Risk Analysis
+## Project Workflow
+The project follows the following workflow:
+1) Splitting the Data into Training and Testing Sets: The lending_data.csv file from the Resources folder is read into a Pandas DataFrame. The "loan_status" column is used to create the labels set (y), and the remaining columns are used to create the features DataFrame (X). The data is then split into training and testing datasets using the train_test_split function.
+2) Creating a Logistic Regression Model with the Original Data: The logistic regression model is implemented with the training data (X_train and y_train) using the logistic regression algorithm. The model is then used to predict the labels for the testing data (X_test). The performance of the model is evaluated by generating a confusion matrix and printing the classification report. Additionally, the model's ability to predict both healthy loans (0) and high-risk loans (1) is assessed.
+3) Credit Risk Analysis Report
+The project includes a Credit Risk Analysis Report file named "CreditRiskAnalysisReport.md". The report provides a summary and analysis of the performance of the logistic regression model. It follows the structure outlined in the provided report template and includes the following sections:
+* Overview of the Analysis: This section explains the purpose of the analysis, which is to develop a logistic regression model for credit risk classification based on the provided dataset.
+* Results: A bulleted list describes the accuracy score, precision score, and recall score of the logistic regression model. These metrics provide an understanding of the model's performance in predicting loan classifications.
+* Summary: This section summarizes the results from the logistic regression model. It includes a justification for recommending the model for use by the lending company. If the model is not recommended, the reasoning behind this decision is also provided.
 
-## Overview of the Analysis
-
-The purpose of this analysis is to evaluate the performance of two logistic regression machine learning models in predicting the credit risk associated with loans. The analysis was conducted on financial data, specifically focusing on loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, and total debt. The objective was to predict the loan status, either as a healthy loan (0) or high-risk loan (1).
-
-The stages of the machine learning process in this analysis included:
-
-1. Splitting the data into training and testing datasets
-2. Creating and fitting a logistic regression model with the original data
-3. Evaluating the model's performance using accuracy, precision, and recall scores
-4. Resampling the data using RandomOverSampler to address class imbalance
-5. Creating and fitting another logistic regression model with the resampled data
-6. Evaluating the performance of the resampled model using the same metrics
-
-Methods used in this analysis include LogisticRegression and RandomOverSampler for resampling.
+## Repository Structure
+* The Credit_Risk_Classification_Analysis.ipynb file contains the code for the analysis, including data preprocessing, model creation, and evaluation.
+* The CreditRiskAnalysisReport.md file houses the Credit Risk Analysis Report, which provides a summary and analysis of the model's performance.
+* The Resources folder contains the lending_data.csv file, which is the dataset used for the analysis.
 
 
-## Results
+## Conclusion
+In conclusion, the logistic regression model developed for credit risk classification exhibited a strong performance in predicting loan statuses. The model leveraged the provided dataset and utilized various features to distinguish between healthy and high-risk loans. The Credit Risk Analysis Report, which provides a comprehensive summary and analysis of the model's performance, can be accessed [here](https://github.com/Akif23Hasan/Module_20_Challenge-Credit_Risk_Classification/blob/main/CreditRiskAnalysisReport.md). It includes an overview of the analysis, detailed results, and a justification for recommending the model for use by the lending company.
 
-## Machine Learning Model 1: Logistic Regression with Original Data
-
-### Description of Model 1 Accuracy, Precision, and Recall scores.
-
-Accuracy: The overall accuracy of the model is 0.99, indicating that it correctly classifies 99% of the instances.
-Precision:
- - Healthy loans (0): The model has a precision of 1.00, which means it's excellent at identifying true positives with very few false positives.
- - High-risk loans (1): The model has a precision of 0.87, indicating its moderate effectiveness in identifying high-risk loans with some false positives.
-Recall:
- - Healthy loans (0): The model has a recall of 1.00, which means it's correctly identifying nearly all instances of healthy loans with very few false     negatives.
- - High-risk loans (1): The model has a recall of 0.89, indicating its effectiveness in identifying high-risk loans with some false negatives.
+For further details and insights, please refer to the Credit Risk Analysis Report linked above.
 
 
-## Machine Learning Model 2: Logistic Regression with Resampled Data 
-
-### Description of Model 2 Accuracy, Precision, and Recall scores.
-Accuracy: The overall accuracy of the model is 0.99, indicating that it correctly classifies 99% of the instances.
-Precision:
- - Healthy loans (0): The model has a precision of 0.99, which means it's excellent at identifying true positives with very few false positives.
- - High-risk loans (1): The model also has a precision of 0.99, indicating its effectiveness in identifying high-risk loans with very few false positives.
-Recall:
- - Healthy loans (0): The model has a recall of 0.99, which means it's correctly identifying nearly all instances of healthy loans with very few false  negatives.
- - High-risk loans (1): The model has a recall of 0.99, indicating its effectiveness in identifying high-risk loans with very few false negatives.
-
-## Summary
-
-Based on the results, the logistic regression model trained with resampled data (Model 2) performs better than the model trained with original data (Model 1), particularly in predicting high-risk loans. Model 2 demonstrates higher precision and recall scores for high-risk loans, which is crucial in minimizing potential financial losses for the lending company.
-
-I recommend using the logistic regression model trained with resampled data (Model 2) for credit risk analysis, as it shows a significant improvement in predicting high-risk loans compared to the original model. This model will help the company effectively assess loan applications and make informed decisions when approving or rejecting loans, thus mitigating credit risk.
+## References
+* Data for this dataset was generated by edX Boot Camps LLC, and is intended for educational purposes only.
+* https://cdn.educba.com/academy/wp-content/uploads/2021/02/Credit-Risk.jpg
+* https://www.investopedia.com/thmb/C_bFuBz5TbJphsxLFrlLx3S4zyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/creditrisk-Final-18f65d6c12404b9cbccd5bb713b85ce4.jpg
